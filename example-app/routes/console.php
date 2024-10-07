@@ -11,7 +11,7 @@ use Illuminate\Contracts\Console\Isolatable;
 
 class SendEmails extends Command implements Isolatable
 {
-    // ...
+   
 }
  
 Artisan::command('mail:send {user}', function (DripEmailer $drip, string $user) {
@@ -28,3 +28,4 @@ Artisan::command('mail:send {user}', function (string $user) {
 Artisan::command('mail:send {user}', function (string $user) {
     // ...
 })->purpose('Send a marketing email to a user');
+

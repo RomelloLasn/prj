@@ -25,4 +25,21 @@ class SendEmails extends Command implements Isolatable
 
         return 0; // Success code
     }
+    use DateTimeInterface;
+use DateInterval;
+/**
+ * Get the isolatable ID for the command.
+ */
+public function isolatableId(): string
+{
+    return $this->argument('user');
+}
+ 
+/**
+ * Determine when an isolation lock expires for the command.
+ */
+public function isolationLockExpiresAt(): DateTimeInterface|DateInterval
+{
+    return now()->addMinutes(5);
+}
 }
